@@ -9,7 +9,7 @@
         android:id="@+id/toolBar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/deepSkyBlue"></android.support.v7.widget.Toolbar>
+        android:background="@color/colorPrimary"></android.support.v7.widget.Toolbar>
     <!-- Login progress -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,13 +19,6 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin">
-        <ProgressBar
-            android:id="@+id/login_progress"
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:visibility="gone" />
 
         <ScrollView
             android:id="@+id/login_form"
@@ -38,38 +31,56 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <android.support.design.widget.TextInputLayout
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/userId"
-                        android:layout_width="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="用户名"
+                        android:textSize="16sp"
+                        android:textColor="@color/dimGray"
+                        />
+                    <EditText
+                        android:id="@+id/userId"
+                        android:textSize="16sp"
+                        android:textColor="@color/dimGray"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="15dp"
+                        android:inputType="text"
+                        android:background="@color/snow"
                         android:hint="请输入用户名"
-                        android:inputType="number"
-                        android:maxLines="1"
-                        android:singleLine="true" />
-
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
+                    android:gravity="center_vertical"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="密    码"
+                        android:textSize="16sp"
+                        android:textColor="@color/dimGray"
+                        />
                     <EditText
                         android:id="@+id/password"
+                        android:textSize="16sp"
+                        android:textColor="@color/dimGray"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/prompt_password"
-                        android:imeActionId="@+id/login"
-                        android:imeActionLabel="@string/action_sign_in_short"
-                        android:imeOptions="actionUnspecified"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="15dp"
                         android:inputType="textPassword"
-                        android:maxLines="1"
-                        android:singleLine="true" />
-
-                </android.support.design.widget.TextInputLayout>
+                        android:background="@color/snow"
+                        android:hint="请输入密码"
+                        />
+                </LinearLayout>
 
                 <Button
                     android:id="@+id/loginBtn"
@@ -77,7 +88,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="@string/action_sign_in"
-                    android:background="@color/button_selector"
+                    android:background="@color/colorPrimary"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
