@@ -5,11 +5,7 @@
     android:orientation="vertical"
     tools:context="com.crane.cranesdemoa.fragment.myCenter.MainMyCenterFragment">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolBar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"></android.support.v7.widget.Toolbar>
+    <include layout="@layout/header_bar"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -22,7 +18,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:background="@color/colorPrimary"
+                android:background="@color/mainColor"
                 android:padding="15dp"
                 >
                 <ImageView

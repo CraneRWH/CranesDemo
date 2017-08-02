@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.crane.cranesdemoa.R;
 
@@ -19,7 +20,7 @@ public class MainMyCenterFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    private Toolbar toolBar;
+    private TextView toolBar;
 
     public MainMyCenterFragment() {
         // Required empty public constructor
@@ -47,8 +48,8 @@ public class MainMyCenterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main_my_center, container, false);
-        toolBar = (Toolbar) view.findViewById(R.id.toolBar);
-        toolBar.setTitle("山东青年政治学院咻咻通");
+        toolBar = (TextView) view.findViewById(R.id.headTitle);
+        toolBar.setText("山东青年政治学院咻咻通");
         return view;
     }
 

@@ -152,7 +152,7 @@
     <color name="headerColor">#E70012</color>	<!-- 标题栏颜色 -->
 
     <color name="grayLight">#B5B5B5</color>		<!-- 灰，主界面文字非选中颜色 -->
-    <color name="mainColor">#E70012</color>		<!-- 主色调，目前与标题栏颜色一样 -->
+    <color name="mainColor">#B22222</color>		<!-- 主色调，目前与标题栏颜色一样 -->
     <color name="searchEditColor">#E1524C</color>	<!-- 搜索编辑框颜色 -->
     <color name="orangeRed2">#FC8108</color>
     <color name="redPerple">#D3434D</color>
