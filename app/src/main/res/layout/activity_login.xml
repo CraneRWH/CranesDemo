@@ -5,11 +5,7 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context="com.crane.cranesdemoa.activity.login.LoginActivity">
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolBar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"></android.support.v7.widget.Toolbar>
+    <include layout="@layout/header_bar"/>
     <!-- Login progress -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,6 +50,7 @@
                         android:inputType="text"
                         android:background="@color/snow"
                         android:hint="请输入用户名"
+                        android:textColorHint="@color/grayLight"
                         />
                 </LinearLayout>
                 <LinearLayout
@@ -79,16 +76,19 @@
                         android:inputType="textPassword"
                         android:background="@color/snow"
                         android:hint="请输入密码"
+                        android:textColorHint="@color/grayLight"
                         />
                 </LinearLayout>
 
                 <Button
                     android:id="@+id/loginBtn"
-                    android:layout_width="match_parent"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginTop="16dp"
                     android:text="@string/action_sign_in"
-                    android:background="@color/colorPrimary"
+                    android:background="@color/mainColor"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />

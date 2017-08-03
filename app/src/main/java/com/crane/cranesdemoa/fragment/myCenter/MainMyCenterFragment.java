@@ -1,6 +1,7 @@
 package com.crane.cranesdemoa.fragment.myCenter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,9 +9,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.crane.cranesdemoa.R;
+import com.crane.cranesdemoa.activity.login.LoginActivity;
 
 public class MainMyCenterFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
@@ -21,6 +24,7 @@ public class MainMyCenterFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     private TextView toolBar;
+    private ImageView userIconView;
 
     public MainMyCenterFragment() {
         // Required empty public constructor
@@ -50,6 +54,14 @@ public class MainMyCenterFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_main_my_center, container, false);
         toolBar = (TextView) view.findViewById(R.id.headTitle);
         toolBar.setText("山东青年政治学院咻咻通");
+        userIconView = (ImageView) view.findViewById(R.id.userIcon);
+        view.findViewById(R.id.headLeftImage).setVisibility(View.GONE);
+        userIconView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), LoginActivity.class));
+            }
+        });
         return view;
     }
 

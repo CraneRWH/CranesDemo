@@ -22,6 +22,7 @@
                 android:padding="15dp"
                 >
                 <ImageView
+                    android:id="@+id/userIcon"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:src="@mipmap/member_icon"

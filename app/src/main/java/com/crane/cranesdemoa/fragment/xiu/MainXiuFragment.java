@@ -1,9 +1,12 @@
 package com.crane.cranesdemoa.fragment.xiu;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +14,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.crane.cranesdemoa.R;
+import com.crane.cranesdemoa.activity.gong.RegistrationXiuActivity;
+import com.crane.cranesdemoa.activity.gong.SchoolOutActivity;
+import com.crane.cranesdemoa.activity.gong.SchoolStationActivity;
+import com.crane.cranesdemoa.activity.gong.XinXIBuActivity;
 
 
 public class MainXiuFragment extends Fragment {
@@ -53,38 +60,59 @@ public class MainXiuFragment extends Fragment {
         toolBar = (TextView) view.findViewById(R.id.headTitle);
         toolBar.setText("山东青年政治学院咻咻通");
 
+        view.findViewById(R.id.headLeftImage).setVisibility(View.GONE);
         view.findViewById(R.id.diangongLayout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getActivity(), RegistrationXiuActivity.class);
+                startActivity(intent);
             }
         });
         view.findViewById(R.id.shuigongLayout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getActivity(), RegistrationXiuActivity.class);
+                startActivity(intent);
             }
         });
         view.findViewById(R.id.mugongLayout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getActivity(), RegistrationXiuActivity.class);
+                startActivity(intent);
             }
         });
-        view.findViewById(R.id.shuigongLayout).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.wanggongLayout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                wanggong();
             }
         });
 
         return view;
     }
 
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+    private void wanggong() {
+        new AlertDialog.Builder(getContext()).setItems(new String[]{"信息技术部","校内维修点","校外维修点"}, new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface arg0, int position) {
+                try {
+                    Intent intent = new Intent();
+                    if(position == 0) {
+                        intent.setClass(getContext(), XinXIBuActivity.class);
+                    }
+                    else if (position == 1){
+                        intent.setClass(getContext(), SchoolStationActivity.class);
+                    } else {
+                        intent.setClass(getContext(), SchoolOutActivity.class);
+                    }
+                    startActivity(intent);
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }).create().show();
     }
 
     @Override

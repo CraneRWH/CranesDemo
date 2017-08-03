@@ -9,7 +9,6 @@
             android:id="@+id/headLeftImage"
             android:layout_width="50dip"
             android:layout_height="50dip"
-            android:visibility="gone"
             android:layout_centerVertical="true"
             android:src="@mipmap/arrow_left_white_icon"
             android:padding="11dp"

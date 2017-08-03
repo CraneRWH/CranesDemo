@@ -25,7 +25,6 @@ public class MainHomeFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     private TextView toolBar;
-    private ViewPager viewPager;
 
     private MListView listView;
 
@@ -52,9 +51,10 @@ public class MainHomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_main_home, container, false);
         toolBar = (TextView) view.findViewById(R.id.headTitle);
         toolBar.setText("山东青年政治学院咻咻通首页");
-        viewPager = (ViewPager) view.findViewById(R.id.viewPager);
+        view.findViewById(R.id.headLeftImage).setVisibility(View.GONE);
         listView = (MListView) view.findViewById(R.id.listView);
         setDatas();
+        listView.setFocusable(false);
         SimpleAdapter adapter = new SimpleAdapter(getContext(), datas, R.layout.home_page_list_item,
                 new String[]{"textView","finish"},
                 new int[]{R.id.textView,R.id.finishText});

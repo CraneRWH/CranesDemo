@@ -5,11 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:background="@color/mainColor"
-    tools:context="com.crane.cranesdemoa.activity.main.LogoActivity">
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@mipmap/hi_icon"/>
+    tools:context="com.crane.cranesdemoa.activity.gong.SchoolOutActivity">
+    <include layout="@layout/header_bar"/>
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></WebView>
 </LinearLayout>

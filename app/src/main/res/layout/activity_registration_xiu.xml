@@ -9,7 +9,8 @@
     <include layout="@layout/header_bar"/>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -178,10 +179,37 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:minHeight="100dp"
+                android:gravity="center_vertical"
                 >
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="图片上传："
+                    android:textSize="16sp"
+                    android:textColor="@color/dimGray"
+                    android:layout_marginLeft="15dp"
+                    />
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="@mipmap/station_default_icon"/>
             </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_color"
+                />
         </LinearLayout>
     </ScrollView>
+    <Button
+        android:id="@+id/sureBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="报修"
+        android:textColor="@color/white"
+        android:background="@color/mainColor"
+        android:textSize="18sp"
+        />
 </LinearLayout>

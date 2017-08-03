@@ -1,43 +1,18 @@
 package com.crane.cranesdemoa.activity.login;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.annotation.TargetApi;
-import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.app.LoaderManager.LoaderCallbacks;
-
-import android.content.CursorLoader;
-import android.content.Loader;
-import android.database.Cursor;
-import android.net.Uri;
-import android.os.AsyncTask;
-
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
-import android.view.KeyEvent;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.inputmethod.EditorInfo;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import android.widget.Toast;
 
 import com.crane.cranesdemoa.R;
 
-import static android.Manifest.permission.READ_CONTACTS;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A login screen that offers login via email/password.
@@ -50,7 +25,9 @@ public class LoginActivity extends AppCompatActivity {
     private EditText userIdView;
     private EditText passwordView;
 
-    private Toolbar toolbar;
+    private TextView toolbar;
+    private Button loginBtn;
+
     @Override
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
@@ -58,14 +35,22 @@ public class LoginActivity extends AppCompatActivity {
 
         userIdView = (EditText)findViewById(R.id.userId);
         passwordView = (EditText) findViewById(R.id.password);
-        toolbar = (Toolbar) findViewById(R.id.toolBar);
+        toolbar = (TextView) findViewById(R.id.headTitle);
+        loginBtn = (Button) findViewById(R.id.loginBtn);
 
-        toolbar.setTitle("山东青年政治学院咻咻通");
-        toolbar.setLogo(R.mipmap.arrow_left_white_icon);
-        toolbar.setNavigationOnClickListener(new OnClickListener() {
+        toolbar.setText("山东青年政治学院咻咻通");
+        findViewById(R.id.headLeftImage).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+        setUSERDatas();
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                login();
             }
         });
     }
@@ -74,6 +59,29 @@ public class LoginActivity extends AppCompatActivity {
         users.put("123456","123456");   //key为用户名，value为登陆密码
         users.put("abcdefg","abcdefg");
         users.put("666666","666666");
+    }
+
+    private void login() {
+        Log.d("login", "进入loginBtn");
+        if (userIdView.getText() == null || userIdView.getText().toString().length() == 0) {
+            Toast.makeText(this,"请输入用户名", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if (passwordView.getText() == null || passwordView.getText().toString().length() == 0) {
+            Toast.makeText(this,"请输入密码", Toast.LENGTH_LONG).show();
+            return;
+        }
+        String userId = userIdView.getText().toString();
+        String password = passwordView.getText().toString();
+        if (users.containsKey(userId)) {
+            if (users.get(userId).equals(password)) {
+                Toast.makeText(this, "登录成功", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, "密码错误", Toast.LENGTH_LONG).show();
+            }
+        } else {
+            Toast.makeText(this, "用户不存在", Toast.LENGTH_LONG).show();
+        }
     }
 }
 

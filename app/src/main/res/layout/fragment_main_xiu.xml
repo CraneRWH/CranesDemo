@@ -35,7 +35,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:background="@drawable/shape_rect_corner_green"
+                android:background="@drawable/shape_rect_corner_red"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:layout_margin="5dp"
@@ -50,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:text="电工"
                     android:textSize="18sp"
-                    android:textColor="@color/dimGray"
+                    android:textColor="@color/snow"
                     android:layout_marginTop="5dp"
                     />
             </LinearLayout>
@@ -113,7 +113,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:background="@drawable/shape_rect_corner_green"
+                android:background="@drawable/shape_rect_corner_red"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:layout_margin="5dp"
@@ -128,7 +128,7 @@
                     android:layout_height="wrap_content"
                     android:text="网工"
                     android:textSize="18sp"
-                    android:textColor="@color/dimGray"
+                    android:textColor="@color/snow"
                     android:layout_marginTop="5dp"
                     />
             </LinearLayout>
